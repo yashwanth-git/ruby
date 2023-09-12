@@ -147,3 +147,52 @@ print(tesla_model_s.number_of_wheels)
 bmw_x5 = Vehicle.new(4, 'gas', 4, 300)
 print(bmw_x5.make_noise)
 
+# Encapsulation
+# hide data members and member functions
+class Person
+    def initialize(name, age)
+        @name = name
+        @age = age
+    end
+end
+
+yash = Person.new("Yashwanth Sridharan", 26);
+
+# print(yash.name) # Throws error because we do not have a method for it
+
+class Person
+    def initialize(name, age)
+        @name = name
+        @age = age
+    end
+    def name
+        @name
+    end
+    def age
+        @age
+    end
+end
+
+yash = Person.new("Yashwanth Sridharan", 26)
+
+print(yash.name)
+
+#Inheritance
+class Car 
+    attr_accessor :number_of_wheels, :seating_capacity, :maximum_velocity
+    def initialize(number_of_wheels, seating_capacity, maximum_velocity)
+        @number_of_wheels = number_of_wheels
+        @seating_capacity = seating_capacity
+        @maximum_velocity = maximum_velocity
+    end
+end
+
+my_car = Car.new(4, 5, 250)
+
+# Ruby just uses < symbol to inherit the class
+class ElectricCar < Car
+end
+
+tesla_model_s = ElectricCar.new(4, 5, 250)
+
+print(tesla_model_s.number_of_wheels)
