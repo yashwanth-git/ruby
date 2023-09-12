@@ -111,8 +111,39 @@ hash_yash.each do |attribute, value|
     puts "#{attribute}: #{value}"
 end
 
-# class Vehicle
-#     def initialize(number_of_wheels, type_of_tank, seating_capacity, maximum_velocity)
-#         @number_of_wheels = number_of_wheels
-#         @type
-# end
+# Class
+# attr_reader - getter function
+# attr_writer - setter function
+# attr_accessor - both getter and setter
+class Vehicle
+    attr_accessor :number_of_wheels #attr_accessor works as both getter and setter function
+
+    def initialize(number_of_wheels, type_of_tank, seating_capacity, maximum_velocity)
+        @number_of_wheels = number_of_wheels
+        @type_of_tank = type_of_tank
+        @seating_capacity = seating_capacity
+        @maximum_velocity = maximum_velocity
+    end
+
+    def number_of_wheels
+        @number_of_wheels
+    end
+
+    def set_number_of_wheels=(number)
+        @number_of_wheels = number
+    end
+
+    def make_noise
+        "VROOOM"
+    end
+end
+
+tesla_model_s = Vehicle.new(4, 'electric', 4, 250)
+print(tesla_model_s.number_of_wheels)
+
+tesla_model_s.number_of_wheels = 3
+print(tesla_model_s.number_of_wheels)
+
+bmw_x5 = Vehicle.new(4, 'gas', 4, 300)
+print(bmw_x5.make_noise)
+
