@@ -95,7 +95,7 @@ hash_yash["age"] = 26
 
 # print "and my age is #{hash_yash["age"]}"
 
-# Looping through DS
+### Looping through DS
 sitcom_series = [
     "Friends",
     "Modern Family",
@@ -111,7 +111,7 @@ hash_yash.each do |attribute, value|
     puts "#{attribute}: #{value}"
 end
 
-# Class
+### Class
 # attr_reader - getter function
 # attr_writer - setter function
 # attr_accessor - both getter and setter
@@ -147,7 +147,7 @@ print(tesla_model_s.number_of_wheels)
 bmw_x5 = Vehicle.new(4, 'gas', 4, 300)
 print(bmw_x5.make_noise)
 
-# Encapsulation
+### Encapsulation
 # hide data members and member functions
 class Person
     def initialize(name, age)
@@ -177,7 +177,7 @@ yash = Person.new("Yashwanth Sridharan", 26)
 
 print(yash.name)
 
-#Inheritance
+### Inheritance
 class Car 
     attr_accessor :number_of_wheels, :seating_capacity, :maximum_velocity
     def initialize(number_of_wheels, seating_capacity, maximum_velocity)
@@ -196,3 +196,27 @@ end
 tesla_model_s = ElectricCar.new(4, 5, 250)
 
 print(tesla_model_s.number_of_wheels)
+
+### Module
+# toolbox that contains contants and methods
+
+print(Math::PI)
+
+puts(Math.sqrt(9))
+
+module Skill
+    def average_speed
+        puts "My average speed is 20mph"
+    end
+end
+
+class RunnerAthelete
+    include Skill
+    def initialize(name)
+        @name = name
+    end
+end
+
+usain_bolt = RunnerAthelete.new("Usain Bolt")
+print(usain_bolt.average_speed)
+
